@@ -1,0 +1,37 @@
+#+TITLE: Beta and binomial are conjugate distributions
+#+OPTIONS: toc:nil num:nil
+#+LATEX_HEADER: \bibliographystyle{plain}
+
+
+Consider a binomial distribution in the form
+\[ P(k|\theta) = {N \choose k} \theta^k (1-\theta)^{N-k} \]
+
+We want to estimate $\theta$; via Bayes theorem (and assuming $p(\theta)=1$):
+
+\begin{eqnarray*}
+P(\theta|k) & = & \frac{P(k|\theta)P(\theta)}{P(k)} \\
+ & = & \frac{{N \choose k} \theta^k (1-\theta)^{N-k}}{{N \choose k}\int_0^1 \theta^k (1-\theta)^{N-k}\,d\theta}  
+\end{eqnarray*}
+
+Now we introduce the beta function 
+
+\begin{eqnarray*}
+\mbox{B}(a,b) & = & \int_0^1 \theta^{a-1} (1-\theta)^{b-1} \,d\theta\\
+& = & \frac{\Gamma(a)\Gamma(b)}{\Gamma(a+b)}
+\end{eqnarray*}
+
+(see \cite{press2007numerical})
+
+hence, setting $k=a-1$ and $N-k=b-1$ one has
+
+\begin{eqnarray*}
+P(\theta|k) & = & \frac{\theta^{a-1}(1-\theta)^{b-1}}{\mbox{B}(a,b)} \\
+& = & \frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)} \theta^{a-1}(1-\theta)^{b-1}
+\end{eqnarray*}
+
+which is called the Beta distribution (see \cite{gelman2013bayesian}).
+
+\bibliography{notes}
+ 
+
+
