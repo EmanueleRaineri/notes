@@ -1,4 +1,5 @@
 #+TITLE: Beta and binomial are conjugate distributions
+#+DATE: [2022-10-29 Sat]
 #+OPTIONS: toc:nil num:nil
 #+LATEX_HEADER: \bibliographystyle{plain}
 

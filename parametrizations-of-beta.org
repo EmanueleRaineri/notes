@@ -1,0 +1,16 @@
+#+TITLE: Different parametrizations for the beta distribution
+#+DATE: [2022-12-10 Sat]
+#+OPTIONS: toc:nil num:nil
+#+LATEX_HEADER: \bibliographystyle{plain}
+
+
+The beta distribution is $\frac{\Gamma(a+b)}{\Gamma(a)\Gamma(b)} \theta^{a-1}(1-\theta)^{b-1}$,
+for $a,b > 0$. Its mean is $\mu=\frac{a}{a+b}$ and its variance is $\sigma^2=\frac{ab}{(a+b)^2(a+b+1)}$.
+
+If one knows the mean and the variance of a beta then it is possible to recover the $a,b$ parameters as
+$a=\mu(\frac{\mu(1-\mu)}{\sigma^2}-1)$ and $b=(1-\mu)(\frac{\mu(1-\mu)}{\sigma^2}-1)$. 
+
+Sometimes the beta distribution is parametrized by mean and dispersion ($\phi=\frac{1}{a+b+1}$)
+instead of mean and variance. In this case one has $a=\frac{\mu(1-\phi)}{\phi}$ and $b=\frac{(1-\mu)(1-\phi)}{\phi}$.
+
+ 
