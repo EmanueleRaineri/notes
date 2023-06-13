@@ -27,13 +27,13 @@ The solution I found is to reset ~LD_LIBRARY_PATH~ when launching ~display~.
 For example
 #+BEGIN_SRC mathematica
 g = Plot[Sin[x],{x,0,Pi}]
-Export[g,"g.png"]
+Export["g.png", g]
 Run["display g.png"]
 #+END_SRC
 does not work but
 #+BEGIN_SRC mathematica
 g = Plot[Sin[x],{x,0,Pi}]
-Export[g,"g.png"]
+Export["g.png", g]
 Run["export LD_LIBRARY_PATH=''; display g.png"]
 #+END_SRC
 works as expected (and can be automatized using the code in the link above).
