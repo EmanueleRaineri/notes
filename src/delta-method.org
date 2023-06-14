@@ -1,0 +1,53 @@
+#+TITLE: Delta method
+#+DATE: [2023-06-10 Sat]
+#+OPTIONS: toc:nil num:nil
+#+LATEX_HEADER: \bibliographystyle{plain}
+
+* Intro
+
+The delta method is a trick by which one can calculate mean and variance of
+a function of a random variable (see eg \cite{wasserman2013all} for a rigorous definition).
+It works by writing the Taylor expansion of the function (say $g(X)$) around
+$E[X]=\mu$.  
+
+To compute the mean of $g(X)$ one does 
+\[ E[g(X)] \approx E[g(\mu)+g^{\prime}(\mu)(X-\mu)] = g(\mu) \].  
+For the variance one has
+\begin{eqnarray*}
+Var[g(X)] = E[(g(X)-E[g(X)])^2] & \approx &  E[(g(X)-g(\mu))^2]\\
+= E[(g(\mu)+g^{\prime}(X-\mu)-g(\mu))^2] &  =  & (g^{\prime}(\mu))^2E[(X-\mu)^2] \\
+& = & (g^{\prime}(\mu))^2\mbox{Var}[X]  
+\end{eqnarray*}
+
+* Example: arcin transform of binomial random variable
+
+Let's consider $Y \sim \mbox{Binomial}(N, \mu)$; hence $E[Y]=\mu$ and $\mbox{Var}[Y]=N\mu(1-\mu)$.
+We also consider the transformed variable $Z=g(Y)=\arcsin(2Y/N-1)$.
+Using the delta method as in the formulae above one has
+ 
+$E[Z] \approx \arcsin (2\mu-1)$. For the variance,
+$g^{\prime}(\mu)=\frac{1}{\sqrt{1-(2\mu-1)^2}}$ hence
+\[\mbox{Var}[Z] \approx 4 \frac{1}{N^2(1-(2\mu-1)^2)} \mu(1-\mu) = \frac{1}{N}\]\label{deltavar}
+
+$\mbox{Var}[Z]$ does not depend on $\mu$ hence $\arcsin$ is said to stabilize the
+variance of $Y$ (this is a known result, \cite{YU20091621}). 
+
+We can plot \ref{deltavar} against the variance of $Z$ computed 
+using the definition:
+
+\[\mbox{Var}[Z]=\sum_{i=0}^n (Z_i-E[Z])^2 P(Z_i)\]\label{exvar}
+
+where $Z_i=g(i)$ and $P(Z_i)=P(Y=i)=\mbox{Binomial}(i|N, \mu)$, and
+\[E[Z]= \sum_{i=0}^n Z_i P(Z_i)\].
+
+The agreement between the variance computed with te delta method as in \ref{deltavar}
+end the exact variance can be seen in the figure below:
+
+
+[[./delta-method.png]]
+
+
+
+
+
+\bibliography{notes} 
