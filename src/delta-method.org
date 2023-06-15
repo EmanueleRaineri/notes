@@ -40,7 +40,7 @@ using the definition:
 where $Z_i=g(i)$ and $P(Z_i)=P(Y=i)=\mbox{Binomial}(i|N, \mu)$, and
 \[E[Z]= \sum_{i=0}^n Z_i P(Z_i)\].
 
-The agreement between the variance computed with te delta method as in \ref{deltavar}
+The agreement between the variance computed with the delta method as in \ref{deltavar}
 end the exact variance can be seen in the figure below:
 
 
