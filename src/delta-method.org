@@ -27,7 +27,10 @@ Using the delta method as in the formulae above one has
  
 $E[Z] \approx \arcsin (2\mu-1)$. For the variance,
 $g^{\prime}(\mu)=\frac{1}{\sqrt{1-(2\mu-1)^2}}$ hence
-\[\mbox{Var}[Z] \approx 4 \frac{1}{N^2(1-(2\mu-1)^2)} \mu(1-\mu) = \frac{1}{N}\]\label{deltavar}
+\begin{equation}\label{deltavar}
+\mbox{Var}[Z] \approx 4 \frac{1}{N^2(1-(2\mu-1)^2)} \mu(1-\mu) = \frac{1}{N}
+\end{equation}
+
 
 $\mbox{Var}[Z]$ does not depend on $\mu$ hence $\arcsin$ is said to stabilize the
 variance of $Y$ (this is a known result, \cite{YU20091621}). 
@@ -41,7 +44,7 @@ where $Z_i=g(i)$ and $P(Z_i)=P(Y=i)=\mbox{Binomial}(i|N, \mu)$, and
 \[E[Z]= \sum_{i=0}^n Z_i P(Z_i)\].
 
 The agreement between the variance computed with the delta method as in \ref{deltavar}
-end the exact variance can be seen in the figure below:
+and the exact variance can be seen in the figure below:
 
 
 [[./delta-method.png]]
