@@ -15,7 +15,7 @@ To compute the mean of $g(X)$ one does
 For the variance one has
 \begin{eqnarray*}
 Var[g(X)] = E[(g(X)-E[g(X)])^2] & \approx &  E[(g(X)-g(\mu))^2]\\
-= E[(g(\mu)+g^{\prime}(X-\mu)-g(\mu))^2] &  =  & (g^{\prime}(\mu))^2E[(X-\mu)^2] \\
+= E[(g(\mu)+g^{\prime}(\mu)(X-\mu)-g(\mu))^2] &  =  & (g^{\prime}(\mu))^2E[(X-\mu)^2] \\
 & = & (g^{\prime}(\mu))^2\mbox{Var}[X]  
 \end{eqnarray*}
 
